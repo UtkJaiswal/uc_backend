@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { IUser } from "../user/user";
+import { IService } from "../../service/service";
 
 export enum VerificationStatus {
     Verified = "Verified",
@@ -15,4 +16,13 @@ export interface IProviderDetails {
     pincode: number;
     aadhaarNumber: number;
     aadhaarNumberVerificationStatus: VerificationStatus;
+}
+
+export interface IProviderService {
+    providerId: mongoose.Types.ObjectId | IUser;
+    serviceId: mongoose.Types.ObjectId | IService;
+    price: number;
+    rating: number;
+    skillCertificate: string;
+    skillCertificateVerificationStatus: VerificationStatus;
 }
