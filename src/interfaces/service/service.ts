@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { IArea } from "../area/area";
 
 export interface IServiceCategory {
     name: string;
@@ -12,4 +13,10 @@ export interface IService {
     price: number;
     duration: number;
     serviceCategoryId: mongoose.Types.ObjectId | IServiceCategory;
+}
+
+export interface IServiceArea {
+    serviceId: mongoose.Types.ObjectId | IService;
+    areaId: mongoose.Types.ObjectId | IArea;
+    isActive: boolean
 }
