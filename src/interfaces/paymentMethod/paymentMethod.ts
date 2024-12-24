@@ -16,3 +16,12 @@ export interface IUPIDetails {
     paymentType: mongoose.Types.ObjectId | IPaymentType;
     upiId: string;
 }
+
+export interface IBankDetails {
+    userId: mongoose.Types.ObjectId | IUser;
+    paymentType: mongoose.Types.ObjectId | IPaymentType;
+    name: string,
+    bankName: string,
+    accountNumber: number,
+    ifscCode: string
+}
