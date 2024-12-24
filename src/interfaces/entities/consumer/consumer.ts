@@ -8,8 +8,3 @@ export interface IConsumerDetails {
     isPremiumMember: Boolean
     wallet: number
 }
-
-export interface IConsumerPaymentMethod {
-    userId: mongoose.Types.ObjectId | IUser;
-    paymentType: mongoose.Types.ObjectId | IPaymentType;
-}
