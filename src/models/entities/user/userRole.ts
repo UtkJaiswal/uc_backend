@@ -18,4 +18,3 @@ const UserRoleSchema: Schema = new Schema<IUserRole>(
 )
 
 export default mongoose.model<IUserRole>('UserRole', UserRoleSchema)
-
