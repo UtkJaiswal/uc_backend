@@ -3,13 +3,13 @@ import { IUserRole } from '../../../interfaces/entities/userRole/userRole'
 
 const UserRoleSchema: Schema = new Schema<IUserRole>(
     {
-        role_id: {
+        roleId: {
             type: Number,
             required: true,
             unique: true
         },
         
-        role_name: {
+        roleName: {
             type: String,
             required: true,
             unique: true

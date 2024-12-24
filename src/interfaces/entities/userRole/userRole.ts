@@ -1,4 +1,4 @@
 export interface IUserRole {
-    role_id: number;
-    role_name: string;
+    roleId: number;
+    roleName: string;
 }

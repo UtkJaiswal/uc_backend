@@ -3,7 +3,7 @@ import { IConsumerDetails } from "../../../interfaces/entities/consumer/consumer
 
 const ConsumerDetailsSchema = new Schema<IConsumerDetails>(
     {
-        user_id: {
+        userId: {
             type: Schema.Types.ObjectId,
             ref: "User",
             required: true

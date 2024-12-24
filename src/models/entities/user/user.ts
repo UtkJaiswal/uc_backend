@@ -7,7 +7,7 @@ const UserSchema: Schema = new Schema<IUser>(
             type: String
         },
 
-        phone_number: {
+        phoneNumber: {
             type: Number,
             required: true,
             unique: true
@@ -17,7 +17,7 @@ const UserSchema: Schema = new Schema<IUser>(
             type: String
         },
 
-        user_role: {
+        userRole: {
             type: Schema.Types.ObjectId,
             ref: "UserRole",
             required: true

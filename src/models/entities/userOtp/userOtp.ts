@@ -3,10 +3,10 @@ import { IUserOtp } from '../../../interfaces/entities/user/user'
 
 const UserOtpSchema: Schema = new Schema<IUserOtp>(
     {
-        otp_hash: {
+        otpHash: {
             type: String
         },
-        expired_at: {
+        expiredAt: {
             type: Date
         }
     },
