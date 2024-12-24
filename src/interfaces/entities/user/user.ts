@@ -10,6 +10,7 @@ export interface IUser {
 }
 
 export interface IUserOtp {
+    userId: mongoose.Types.ObjectId | IUser;
     otpHash: string,
     expiredAt: Date
 }
