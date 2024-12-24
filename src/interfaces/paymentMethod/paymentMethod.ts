@@ -10,3 +10,9 @@ export interface ICardDetails {
     cvv: number,
     expiryDate: Date
 }
+
+export interface IUPIDetails {
+    userId: mongoose.Types.ObjectId | IUser;
+    paymentType: mongoose.Types.ObjectId | IPaymentType;
+    upiId: string;
+}
