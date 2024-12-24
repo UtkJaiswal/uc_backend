@@ -1,5 +1,5 @@
 import mongoose, { Schema } from 'mongoose'
-import { IUserRole } from '../../interfaces/userRole/userRole'
+import { IUserRole } from '../../../interfaces/entities/userRole/userRole'
 
 const UserRoleSchema: Schema = new Schema<IUserRole>(
     {

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IUserRole } from "../../userRole/userRole";
+import { IUserRole } from "../userRole/userRole";
 
 export interface IUser {
     name: string;
