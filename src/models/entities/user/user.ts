@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 import { IUser } from '../../../interfaces/entities/user/user'
 
 const UserSchema: Schema = new Schema<IUser>(

@@ -8,3 +8,8 @@ export interface IUser {
     user_role: mongoose.Types.ObjectId | IUserRole;
     is_active: Boolean
 }
+
+export interface IUserOtp {
+    otp_hash: string,
+    expired_at: Date
+}
