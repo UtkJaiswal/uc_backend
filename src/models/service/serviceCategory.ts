@@ -1,7 +1,7 @@
 import mongoose, { Schema } from 'mongoose'
 import { IServiceCategory } from '../../interfaces/service/service'
 
-const ServiceCategory: Schema = new Schema<IServiceCategory>(
+const ServiceCategorySchema: Schema = new Schema<IServiceCategory>(
     {
         name: {
             type: String,
@@ -17,4 +17,4 @@ const ServiceCategory: Schema = new Schema<IServiceCategory>(
 
 )
 
-export default mongoose.model('ServiceCategory', ServiceCategory)
+export default mongoose.model('ServiceCategory', ServiceCategorySchema)

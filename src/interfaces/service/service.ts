@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 export interface IServiceCategory {
     name: string;
     description: string;
@@ -7,6 +9,7 @@ export interface IServiceCategory {
 export interface IService {
     name: string;
     description: string;
-    price: string;
+    price: number;
     duration: number;
+    serviceCategoryId: mongoose.Types.ObjectId | IServiceCategory;
 }
