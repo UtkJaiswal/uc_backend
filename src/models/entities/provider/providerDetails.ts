@@ -34,9 +34,12 @@ const ProviderDetailsSchema: Schema = new Schema<IProviderDetails>(
         aadhaarNumberVerificationStatus: {
             type: String,
             enum: Object.values(VerificationStatus),
-            default: VerificationStatus.Rejected
+            default: VerificationStatus.Pending
         }
-    }
+    },
+
+    { timestamps: true }
+
 )
 
 export default mongoose.model('ProviderDetails', ProviderDetailsSchema)
