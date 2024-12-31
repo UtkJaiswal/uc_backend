@@ -6,6 +6,7 @@ import { IConsumerAddress } from "../entities/consumer/consumer";
 
 
 export interface IBooking {
+    _id: mongoose.Types.ObjectId;
     consumerId: mongoose.Types.ObjectId | IUser;
     serviceId: mongoose.Types.ObjectId | IService;
     providerId: mongoose.Types.ObjectId | IUser;

@@ -20,7 +20,7 @@ const UserSchema: Schema = new Schema<IUser>(
         userRole: {
             type: Schema.Types.ObjectId,
             ref: "UserRole",
-            required: true
+            // required: true
 
         }
     },

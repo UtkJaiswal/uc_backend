@@ -9,6 +9,7 @@ export enum VerificationStatus {
 }
 
 export interface IProviderDetails {
+    _id: mongoose.Types.ObjectId;
     userId: mongoose.Types.ObjectId | IUser;
     profilePicture: string;
     rating: number;
@@ -19,6 +20,7 @@ export interface IProviderDetails {
 }
 
 export interface IProviderService {
+    _id: mongoose.Types.ObjectId;
     providerId: mongoose.Types.ObjectId | IUser;
     serviceId: mongoose.Types.ObjectId | IService;
     price: number;

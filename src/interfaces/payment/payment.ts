@@ -4,6 +4,7 @@ import { IPaymentType } from "../paymentType/paymentType";
 import { VerificationStatus } from "../entities/provider/provider";
 
 export interface IPayment {
+    _id: mongoose.Types.ObjectId;
     type:string;
     bookingId: mongoose.Types.ObjectId | IBooking;
     amount: number;
