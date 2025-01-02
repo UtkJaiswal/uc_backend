@@ -16,7 +16,7 @@ declare global {
     }
 }
 
-const authMiddleware = (req: Request, res: Response, next: NextFunction): Response<any> | void => {
+const authMiddleware = (req: Request, res: Response, next: NextFunction): any => {
     const authHeader = req.headers['authorization'];
 
     if (!authHeader) {
@@ -33,8 +33,7 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction): Respon
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JWTPayload;
-        req.user = decoded; 
-        // console.log("Decoded token (req.user):", req.user); 
+        req.user = decoded;
         next(); 
     } catch (error) {
         console.error("Token verification error:", error); 

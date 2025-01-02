@@ -106,3 +106,33 @@ export const verifyOTP = async (req: Request, res: Response, next: NextFunction)
         next(error);
     }
 }
+
+
+export const getUserDetails = async (req: Request, res: Response, next: NextFunction): Promise<any> => {
+
+    try {
+
+        const userId = req.user?.id;
+    
+        if (!userId) {
+            return res.status(400).json({ error: 'UserId not found' });
+        }
+    
+        const user = await User.findById(userId).select('name phoneNumber');
+    
+        if (!user) {
+            return res.status(400).json({ error: 'User not found' });
+        }
+
+        return res.status(200).json({ 
+            message: 'OTP verified successfully',
+            data: {
+                user:user
+            }
+        });
+    }
+
+    catch (error) {
+        next(error);
+    }
+}
