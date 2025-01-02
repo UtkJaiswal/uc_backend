@@ -19,4 +19,5 @@ export interface IUserOtp {
 
 export interface IUserOtpModel extends Model<IUserOtp> {
     hashOtp(otp: string): string;
+    verifyOtp(otp: string, hash: string): boolean;
 }

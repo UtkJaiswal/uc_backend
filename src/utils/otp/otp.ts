@@ -13,10 +13,10 @@ export const generateOtp = (): string => {
     return crypto.randomInt(1000, 9999).toString();
 };
 
-export const sendOtpMessage = async (phoneNumber: string, otp: string, otpExpiryMin: number): Promise<void> => {
+export const sendOtpMessage = async (phoneNumber: string): Promise<void> => {
     try {
 
-        const verification = await client.verify.services(serviceSid)
+        const verification = await client.verify.v2.services(serviceSid)
             .verifications
             .create({ to: phoneNumber, channel: 'sms' });
     }
@@ -26,6 +26,17 @@ export const sendOtpMessage = async (phoneNumber: string, otp: string, otpExpiry
     }
 };
 
+export const verifyCode = async (phoneNumber: string, code: string): Promise<boolean | undefined> => {
+    try {
+        const verification = await client.verify.v2.services(serviceSid)
+        .verificationChecks
+        .create({ to: phoneNumber, code });
 
+        return verification.valid || false;
+    } catch (err) {
+        console.error("Error verifying code", err);
+        throw new Error('Failed to verify OTP. Please try again later.');
+    }
+}
 
 

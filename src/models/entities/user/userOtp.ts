@@ -27,6 +27,12 @@ UserOtpSchema.statics.hashOtp = function (otp: string): string {
     return crypto.createHash('sha256').update(otp).digest('hex');
 };
 
+UserOtpSchema.statics.verifyOtp = function (otp: string, hash: string): boolean {
+    const hashedOtp = crypto.createHash('sha256').update(otp).digest('hex');
+    return hashedOtp === hash;
+};
+
+
 UserOtpSchema.pre('save', function (next) {
     const otpDocument = this as mongoose.Document & { otpHash?: string };
   
