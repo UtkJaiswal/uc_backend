@@ -11,9 +11,9 @@ app.use(express.json());
 app.options('*', cors());
 
 
-// app.get('/', (req: Request, res: Response) => {
-//     res.status(200).json({message:"Welcome to the test server"})
-// })
+app.get('/', (req: Request, res: Response) => {
+    res.status(200).json({message:"Welcome to the test server"})
+})
 
 app.use('/users', userRouter)
 
